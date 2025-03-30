@@ -170,6 +170,9 @@ class OfflineModel(private val context: Context, private val listener: IModel) {
             val decoderOutputs = decoderModule!!.forward(IValue.from(encoderOutputs)).toTensor()
             val outputTokens = decoderOutputs.dataAsLongArray
 
+            Log.e("tokens", outputTokens.joinToString(", "))
+
+
             val caption = convertTokensToWords(outputTokens, lang)
 
             listener.showToast("Kết quả: $caption")
@@ -181,6 +184,7 @@ class OfflineModel(private val context: Context, private val listener: IModel) {
      * Chuyển đổi token ID thành chuỗi văn bản.
      */
     private fun convertTokensToWords(predictedTokens: LongArray, lang: String): String {
+
         val tokenizerMapping = if (lang == "vi") tokenizerMappingVi else tokenizerMappingEn
         return predictedTokens.joinToString(" ") { tokenizerMapping[it] ?: "" }
             .replace("Ġ", "")

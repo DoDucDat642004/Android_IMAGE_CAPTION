@@ -141,8 +141,7 @@ class Camera(
      * Chụp ảnh từ TextureView và xử lý (upload hoặc offline).
      */
     internal fun captureImage() {
-        val bitmap = textureView.bitmap // Lấy ảnh từ TextureView
-        if (bitmap == null) return
+        val bitmap = textureView.bitmap ?: return // Lấy ảnh từ TextureView
 
         coroutineScope.launch {
             if (cameraListener.hasInternetConnection()) { // Kiểm tra mạng

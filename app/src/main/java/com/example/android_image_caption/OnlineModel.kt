@@ -15,7 +15,7 @@ import java.io.IOException // Dùng để xử lý lỗi I/O
 class OnlineModel(private val listener: IModel) {
 
     // URL của server dùng để nhận ảnh và trả về kết quả
-    private val serverUrl = "https://0bcc-171-243-48-28.ngrok-free.app/predict"
+    private val serverUrl = "https://49a4-171-243-49-114.ngrok-free.app/predict"
 
     // Tạo một instance của OkHttpClient để gửi HTTP requests
     private val client = OkHttpClient()

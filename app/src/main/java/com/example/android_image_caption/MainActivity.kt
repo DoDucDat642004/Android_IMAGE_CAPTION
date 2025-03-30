@@ -1,7 +1,6 @@
 package com.example.android_image_caption
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -46,7 +45,6 @@ class MainActivity : AppCompatActivity(), ICamera, IModel, TextToSpeech.OnInitLi
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
         textureView = findViewById(R.id.textureView)
